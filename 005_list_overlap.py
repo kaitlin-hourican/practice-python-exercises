@@ -1,3 +1,10 @@
+import random
+
+def main():
+    print(get_list_overlap(random_list(), random_list()))
+    print(get_list_overlap(random_list(), random_list()))
+    print(get_list_overlap(random_list(), random_list()))
+
 def get_list_overlap(a, b):
     overlap = []
     for el in a:
@@ -6,13 +13,8 @@ def get_list_overlap(a, b):
 
     return overlap
 
-list_1 = [ 1, 2, 3, 4, 5, 6, 7, 8]
-list_2 = [ 2, 4, 6, 8]
-list_3 = [ 1, 3, 3, 5, 7, 9, 10, 15]
-list_4 = [ 4, 4.5, -2, 10, 1, 4]
+def random_list():
+    return random.choices(range(1, 51), k=random.randint(1, 25))
 
-print(get_list_overlap(list_2, list_1))
-print(get_list_overlap(list_2, list_4))
-print(get_list_overlap(list_3, list_4))
-print(get_list_overlap(list_1, list_3))
-
+if __name__ == "__main__":
+    main()
